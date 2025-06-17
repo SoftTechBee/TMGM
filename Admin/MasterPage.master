@@ -1,0 +1,359 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Admin_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="en"  data-bs-theme="blue-theme">
+<head runat="server">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Save Money | Admin Dashboard</title>
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet"> 
+	<script src="assets/js/pace.min.js"></script>
+  <!--plugins-->
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <!--bootstrap css-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <!--main css-->
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="../sass/main.css" rel="stylesheet">
+  <link href="../sass/dark-theme.css" rel="stylesheet">
+  <link href="../sass/blue-theme.css" rel="stylesheet">
+  <link href="../sass/semi-dark.css" rel="stylesheet">
+  <link href="../sass/bordered-theme.css" rel="stylesheet">
+  <link href="../sass/responsive.css" rel="stylesheet">
+      <style>
+        .form-group{
+            margin-bottom:10px!important;
+        }
+    </style>
+       <style>
+            ::-webkit-calendar-picker-indicator {
+  background-color: black;
+}
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <!--start header-->
+  <header class="top-header">
+    <nav class="navbar navbar-expand align-items-center gap-4">
+      <div class="btn-toggle">
+        <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
+      </div>
+      <div class="search-bar flex-grow-1">
+        <div class="position-relative">
+          
+          <div class="search-popup p-3">
+            <div class="card rounded-4 overflow-hidden">
+              <div class="card-header d-lg-none">
+                <div class="position-relative">
+                 
+                 </div>
+              </div>
+              <div class="card-body search-content">
+                <p class="search-title">Recent Searches</p>
+            
+                <hr>
+               
+  
+  
+                <hr>
+                <p class="search-title">Members</p>
+  
+                <div class="search-list d-flex flex-column gap-2">
+                  <div class="search-list-item d-flex align-items-center gap-3">
+                    <div class="memmber-img">
+                      <img src="assets/images/favicon.png" width="32" height="32" class="rounded-circle" alt="">
+                    </div>
+                    <div class="">
+                      <h5 class="mb-0 search-list-title ">Andrew Stark</h5>
+                    </div>
+                  </div>
+  
+                  <div class="search-list-item d-flex align-items-center gap-3">
+                    <div class="memmber-img">
+                      <img src="assets/images/avatars/02.png" width="32" height="32" class="rounded-circle" alt="">
+                    </div>
+                    <div class="">
+                      <h5 class="mb-0 search-list-title ">Snetro Jhonia</h5>
+                    </div>
+                  </div>
+  
+                  <div class="search-list-item d-flex align-items-center gap-3">
+                    <div class="memmber-img">
+                      <img src="assets/images/avatars/03.png" width="32" height="32" class="rounded-circle" alt="">
+                    </div>
+                    <div class="">
+                      <h5 class="mb-0 search-list-title">Michle Clark</h5>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="card-footer text-center bg-transparent">
+                <a href="javascript:;" class="btn w-100">See All Search Results</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav gap-1 nav-right-links align-items-center">
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside"
+            data-bs-toggle="dropdown" href="javascript:;"><%--<i class="material-icons-outlined">notifications</i>--%>
+            <%--<span class="badge-notify">5</span>--%>
+          </a>
+          <div >
+            
+            <div class="notify-list">
+             
+            </div>
+          </div>
+        </li>
+        <li class="nav-item d-md-flex d-none">
+          <a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#offcanvasCart"><%--<i
+              class="material-icons-outlined">shopping_cart</i>--%>
+            <%--<span class="badge-notify">8</span>--%>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+             <img src="assets/images/favicon.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
+          </a>
+          <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
+            <a class="dropdown-item  gap-2 py-2" href="javascript:;">
+              <div class="text-center">
+                <img src="assets/images/favicon.png" class="rounded-circle p-1 shadow mb-3" width="70" height="70"
+                  alt="">
+                <h5 class="user-name mb-0 fw-bold">Hello, Admin</h5>
+              </div>
+            </a>
+            <hr class="dropdown-divider">
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="EditProfile.aspx"><i
+              class="material-icons-outlined">person_outline</i>Profile</a>
+             <hr class="dropdown-divider">
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="logout.aspx"><i
+            class="material-icons-outlined">power_settings_new</i>Logout</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+  <!--end top header-->
+
+
+   <!--start sidebar-->
+   <aside class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header">
+      
+      <div class="logo-name flex-grow-1">
+        <img src="assets/images/logo-white.png" class="logo-img "  style="width:70%" alt="">
+      </div>
+      <div class="sidebar-close">
+        <span class="material-icons-outlined">close</span>
+      </div>
+    </div>
+    <div class="sidebar-nav">
+        <!--navigation-->
+        <ul class="metismenu" id="sidenav">
+      <li class="menu-label">MAIN</li>
+          <li>
+            <a href="Home.aspx">
+              <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Home</div>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#" class="has-arrow">
+              <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
+              </div>
+              <div class="menu-title">Master</div>
+            </a>
+            <ul>
+              <li><a href="EditProfile.aspx"><i class="material-icons-outlined">arrow_right</i>Member Profile</a></li>
+<%--<li><a href="ChangePassword.aspx"><i class="material-icons-outlined">arrow_right</i>Change Password</a></li>--%>
+<li><a href="userpassword.aspx"><i class="material-icons-outlined">arrow_right</i>All Password</a></li>
+<li><a href="rptmemberProfileAccess.aspx"><i class="material-icons-outlined">arrow_right</i>Profile Access</a></li>
+<li><a href="setnews.aspx"><i class="material-icons-outlined">arrow_right</i>Set News</a></li>
+<li><a href="BlockMember.aspx"><i class="material-icons-outlined">arrow_right</i>Blocked Member</a></li>
+<li><a href="UnBlockMemberList.aspx"><i class="material-icons-outlined">arrow_right</i>Un-Blocked Member</a></li>
+<li><a href="Bankmaster.aspx"><i class="material-icons-outlined">arrow_right</i>Set Company QR</a></li>
+<%--<li><a href="PackMaster.aspx"><i class="material-icons-outlined">arrow_right</i>Set Package</a></li>
+<li><a href="SetTodayROI.aspx"><i class="material-icons-outlined">arrow_right</i>Set TodayROI</a></li>--%>
+
+            </ul>     
+          </li>
+        
+          <li>
+            <a class="has-arrow" href="#">
+              <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
+              </div>
+              <div class="menu-title">Deposit Wallet</div>
+            </a>
+            <ul>
+                <li><a href="WalletRechargeRequest.aspx"><i class="material-icons-outlined">arrow_right</i>Pending Deposit List</a></li>
+<li><a href="WalletApprovedList.aspx"><i class="material-icons-outlined">arrow_right</i>Approved List</a></li>
+<li><a href="WalletRejectlist.aspx"><i class="material-icons-outlined">arrow_right</i>Reject List</a></li>
+
+             
+            </ul>
+          </li>
+            
+
+         
+          <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
+              </div>
+              <div class="menu-title">Financial</div>
+            </a>
+            <ul>
+            
+          <li><a href="cryptoWallet.aspx"><i class="material-icons-outlined">arrow_right</i>Edit Crypto Wallet</a></li>
+<li><%--<a href="Bank.aspx"><i class="material-icons-outlined">arrow_right</i>Edit INR Wallet</a>--%></li>
+<li><a href="withdrawPendingList.aspx"><i class="material-icons-outlined">arrow_right</i>Withdraw Request List</a></li>
+<li><a href="withdrawApprovedlist.aspx"><i class="material-icons-outlined">arrow_right</i>Withdraw Paided List</a></li>
+<li><a href="withdrawRejectList.aspx"><i class="material-icons-outlined">arrow_right</i>Withdraw Reject List</a></li>
+
+            </ul>
+          </li>
+       
+          <li>
+            <a class="has-arrow" href="#">
+              <div class="parent-icon"><i class="material-icons-outlined">toc</i>
+              </div>
+              <div class="menu-title">Member List</div>
+            </a>
+            <ul>
+            <li><a href="Activelist.aspx"><i class="material-icons-outlined">arrow_right</i>Active Member</a></li>
+<li><a href="InActiveuser.aspx"><i class="material-icons-outlined">arrow_right</i>InActive Member</a></li>
+<li><a href="TodayActiveMember.aspx"><i class="material-icons-outlined">arrow_right</i>Today Active Member</a></li>
+<li><a href="TodayJoinMember.aspx"><i class="material-icons-outlined">arrow_right</i>Today Join Member</a></li>
+
+            </ul>
+          </li>
+            <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon"><i class="material-icons-outlined">fitbit</i>
+              </div>
+              <div class="menu-title">Master Fund</div>
+            </a>
+            <ul>
+             <li><a href="Accountmaster.aspx"><i class="material-icons-outlined">arrow_right</i>Fund Wallet Master</a></li>
+<li><a href="AccountMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Fund Wallet History</a></li>
+<li><a href="Incomemaster.aspx"><i class="material-icons-outlined">arrow_right</i>Income transfer</a></li>
+<li><a href="IncomeMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Income transfer History</a></li>
+ 
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" href="#">
+              <div class="parent-icon"><i class="material-icons-outlined">trending_up</i>
+              </div>
+              <div class="menu-title">Incomes</div>
+            </a>
+            <ul>
+               <li><a href="rptROIIncome.aspx"><i class="material-icons-outlined">arrow_right</i>Profit ROI Income</a></li>
+<li><a href="rptDrectIncome.aspx"><i class="material-icons-outlined">arrow_right</i>ROI Level Income</a></li>
+<li><a href="rptLoyaltyIncome.aspx"><i class="material-icons-outlined">arrow_right</i>Royalty Income</a></li>
+<%-- <li><a href="rptSuperDirectIncome.aspx"><i class="material-icons-outlined">arrow_right</i>Leader Monthly Income</a></li>--%>
+<li><a href="rptAllWallet.aspx"><i class="material-icons-outlined">arrow_right</i>User Total Income</a></li>
+
+              
+            </ul>
+          </li>
+       
+          <li>
+            <a class="has-arrow" href="#">
+              <div class="parent-icon"><i class="material-icons-outlined">person</i>
+              </div>
+              <div class="menu-title">Member Network</div>
+            </a>
+            <ul>
+             <li><a href="direct.aspx"><i class="material-icons-outlined">arrow_right</i>Sponsor Team</a></li>
+<li><a href="rptdwonline.aspx"><i class="material-icons-outlined">arrow_right</i>Level Team</a></li>
+<li><a href="royalty.aspx"><i class="material-icons-outlined">arrow_right</i>Royalty Status</a></li>
+<li><a href="rptRewardReport.aspx"><i class="material-icons-outlined">arrow_right</i>Award & Reward</a></li>
+
+             
+            </ul>
+          </li>
+      
+            <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon"><i class="material-icons-outlined">live_help</i>
+              </div>
+              <div class="menu-title">Support</div>
+            </a>
+            <ul>
+             <li><a href="SupportLIst.aspx"><i class="material-icons-outlined">arrow_right</i>Support Ticket</a></li>
+<li><a href="SupportLIstApproved.aspx"><i class="material-icons-outlined">arrow_right</i>Closed Support</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="logout.aspx">
+              <div class="parent-icon"><i class="material-icons-outlined">logout</i>
+              </div>
+              <div class="menu-title">Logout</div>
+            </a>
+          </li>
+        
+       
+         </ul>
+        <!--end navigation-->
+    </div>
+  </aside>
+<!--end sidebar-->
+     <!--start main wrapper-->
+  <main class="main-wrapper">
+    <div class="main-content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+  </main>
+  <!--end main wrapper-->
+        <!--start overlay-->
+     <div class="overlay btn-toggle"></div>
+  <!--end overlay-->
+
+ 
+
+
+
+ 
+    </form>
+     <!--bootstrap js-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!--plugins-->
+  <script src="assets/js/jquery.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+  <script>
+    $(".data-attributes span").peity("donut")
+  </script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard1.js"></script>
+  <script>
+	   new PerfectScrollbar(".user-list")
+  </script>
+</body>
+</html>

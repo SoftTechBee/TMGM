@@ -1,0 +1,75 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="direct.aspx.cs" Inherits="Admin_DirectList" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="alert alert-danger alert-dismissible" id="danger" runat="server" visible="false">
+        <h4><i class="icon fa fa-ban"></i>Alert!</h4>
+        <asp:Label ID="lbdanger" runat="server" Text="There is  some thing wrong........."></asp:Label>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-header with-border">
+                <h5 class=" card-title text-danger">Direct Team</h5>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group row align-items-center">
+                        <label class="col-lg-2 col-md-2 col-xs-6 ">Enter UserName </label>
+                        <div class="col-lg-8 col-md-3 col-xs-6">
+                            <asp:TextBox ID="txtUname" class="form-control" runat="server" placeholder="Enter UserName "></asp:TextBox>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-xs-6 ">
+                            <asp:Button ID="btnSeach" runat="server" Text="Search" CssClass="btn btn-block btn-danger" OnClick="btnSeach_Click" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="table-responsive">
+                            <div class="col-lg-12" style="overflow: auto;">
+                                <table id="example1" class="table table-striped table-hover " style="cellspacing: 0; width: 100%">
+                                    <headertemplate>
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Sn.</th>
+                                                <th>Sponser Id</th>
+                                                <th>Sponser Name</th>
+                                                <th>Distributor </th>
+                                                <th>Name</th>
+                                                <th>Mobile</th>
+                                                <th>State</th>
+                                                <th>JoiningAmount</th>
+                                            </tr>
+                                        </thead>
+                                    </headertemplate>
+                                    <tbody>
+                                        <asp:Repeater ID="Repeater1" runat="server">
+                                            <ItemTemplate>
+                                                <tr>
+                                                    <td><%#Container.ItemIndex+1 %> </td>
+                                                    <td><%#Eval("reffid") %></td>
+                                                    <td><%#Eval("reffname") %></td>
+                                                    <td><%#Eval("username") %></td>
+                                                    <td><%#Eval("name") %></td>
+                                                    <td><%#Eval("mobile") %></td>
+                                                    <td><%#Eval("city") %></td>
+                                                    <td><%#Eval("JoinAmt") %></td>
+                                                </tr>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</asp:Content>
+
+
+
